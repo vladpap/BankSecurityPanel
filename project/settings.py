@@ -1,24 +1,26 @@
 import os
-from dotenv import load_dotenv
+from environs import Env
 
 
-load_dotenv()
+env = Env()
+env.read_env()
+
 DATABASES = {
     'default': {
-        'ENGINE': os.environ['DATABASES_ENGINE'],
-        'HOST': os.environ['DATABASES_HOST'],
-        'PORT': os.environ['DATABASES_PORT'],
-        'NAME': os.environ['DATABASES_NAME'],
-        'USER': os.environ['DATABASES_USER'],
-        'PASSWORD': os.environ['DATABASES_PASSWORD'],
+        'ENGINE': env.str('DATABASES_ENGINE'),
+        'HOST': env.str('DATABASES_HOST'),
+        'PORT': env.int('DATABASES_PORT'),
+        'NAME': env.str('DATABASES_NAME'),
+        'USER': env.str('DATABASES_USER'),
+        'PASSWORD': env.str('DATABASES_PASSWORD'),
     }
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = env.str('SECRET_KEY')
 
-DEBUG = True
+DEBUG = env.str('DEBUG').lower() == 'true'
 
 ROOT_URLCONF = 'project.urls'
 
@@ -37,9 +39,9 @@ TEMPLATES = [
 
 USE_L10N = True
 
-LANGUAGE_CODE = os.environ['LANGUAGE_CODE']
+LANGUAGE_CODE = env.str('LANGUAGE_CODE')
 
-TIME_ZONE = os.environ['TIME_ZONE']
+TIME_ZONE = env.str('TIME_ZONE')
 
 USE_TZ = True
 

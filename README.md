@@ -28,6 +28,8 @@ $ pip install -r requirements.txt
 
  - `SECRET_KEY`
 
+ - `DEBUG`
+
  - `LANGUAGE_CODE`
  - `TIME_ZONE`
 
