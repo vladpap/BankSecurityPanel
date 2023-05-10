@@ -15,6 +15,22 @@
 $ pip install -r requirements.txt
 ```
 
+## Секретные данные настройки БД Джанго
+
+Создать файл `.env` с переменными:
+
+ - `DATABASES_ENGINE`
+ - `DATABASES_HOST`
+ - `DATABASES_PORT`
+ - `DATABASES_NAME`
+ - `DATABASES_USER`
+ - `DATABASES_PASSWORD`
+
+ - `SECRET_KEY`
+
+ - `LANGUAGE_CODE`
+ - `TIME_ZONE`
+
 ## Запуск
 
 ```console
