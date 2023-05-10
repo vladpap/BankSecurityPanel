@@ -36,7 +36,7 @@ $ pip install -r requirements.txt
 ## Запуск
 
 ```console
-$ python main.py
+$ python manager.py runserver 127.0.0.1:8000
 ```
 
 После этого переходите по ссылке [127.0.0.1:8000](http://127.0.0.1:8000), вы увидите главную страницу.
