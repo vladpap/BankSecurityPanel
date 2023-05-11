@@ -15,23 +15,36 @@
 $ pip install -r requirements.txt
 ```
 
-## Секретные данные настройки БД Джанго
+## Секретные данные настройки Джанго
 
 Создать файл `.env` с переменными:
 
- - `DATABASES_ENGINE`
- - `DATABASES_HOST`
- - `DATABASES_PORT`
- - `DATABASES_NAME`
- - `DATABASES_USER`
- - `DATABASES_PASSWORD`
+ - Обязательные переменные, для подключения к БД:
+    - `DATABASES_HOST`
+    - `DATABASES_PORT`
+    - `DATABASES_NAME`
+    - `DATABASES_USER`
+    - `DATABASES_PASSWORD`
 
- - `SECRET_KEY`
+ - Пример файла `.env`:
+```console
+DATABASES_ENGINE=django.db.backends.postgresql
+DATABASES_HOST=db.example.com
+DATABASES_PORT=5432
+DATABASES_NAME=production_db
+DATABASES_USER=user
+DATABASES_PASSWORD=password
 
- - `DEBUG`
+SECRET_KEY=My secret Key
 
- - `LANGUAGE_CODE`
- - `TIME_ZONE`
+DEBUG=True
+
+ALLOWED_HOSTS=127.0.0.1, localhost
+
+LANGUAGE_CODE=ru-ru
+TIME_ZONE=Europe/Moscow
+
+```
 
 ## Запуск
 
